@@ -6,6 +6,7 @@ def a(names: list):
         print(name)
 
 
+
 # Utwórz funkcję, która otrzyma w parametrze listę zawierającą 5 dowolnych
 # liczb, każdy jej element pomnoży przez 2, a na końcu ją zwróci. Zadanie
 # należy wykonać w 2 wersjach:
@@ -16,15 +17,9 @@ def b_1(numbers: list):
     return numbers
 
 
-print(b_1([1, 2, 3, 4, 5]))
-
-
 def b_2(numbers: list):
     numbers = [number * 2 for number in numbers]
     return numbers
-
-
-print(b_2([1, 2, 3, 4, 5]))
 
 
 # Utwórz pętlę iterującą po liście zawierającej 10 liczb (rekomendowane
