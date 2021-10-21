@@ -60,7 +60,7 @@ def zad6(array1: list, array2: list):
 # print(zad6([1, 2, 3, 4], [1, 2, 3, 4, 5, 6, 7]))
 
 
-# zad 7
+# zad 7 + zad 8
 
 
 class Brawery():
