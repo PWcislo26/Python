@@ -1,4 +1,9 @@
 import requests
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--city', type=str, required=False)
+args = parser.parse_args()
 
 
 # zad 1
@@ -52,7 +57,7 @@ def zad6(array1: list, array2: list):
     return array
 
 
-#print(zad6([1, 2, 3, 4], [1, 2, 3, 4, 5, 6, 7]))
+# print(zad6([1, 2, 3, 4], [1, 2, 3, 4, 5, 6, 7]))
 
 
 # zad 7
@@ -81,12 +86,15 @@ class Brawery():
         self.created_at = created_at
 
     def __str__(self):
-        return "Brewery {} is located in {} at {} long {} lat".format(self.name, self.state, self.longitude, self.latitude)
-
+        return "Brewery {} is located in state {} in {} city at {} long {} lat".format(self.name, self.state, self.city,
+                                                                            self.longitude, self.latitude)
 
 
 def getInfo():
-    url = 'https://api.openbrewerydb.org/breweries?per_page=20'
+    if args.city != None:
+        url = 'https://api.openbrewerydb.org/breweries?by_city={}'.format(args.city)
+    else:
+        url = 'https://api.openbrewerydb.org/breweries?per_page=20'
     resp = requests.get(url)
     data = resp.json()
     listOfBreweries = []
