@@ -1,6 +1,7 @@
 from datetime import datetime
 
 
+# zad1
 class Student():
 
     def __init__(self, name, marks):
@@ -20,6 +21,7 @@ student2 = Student("Alicja", 36)
 print(student2.is_passed())
 
 
+# zad2
 class Library():
     def __init__(self, city, street, zip_code, open_hours, phone):
         self.city = city
@@ -40,7 +42,7 @@ class Order():
         self.order_date = order_date
 
     def __str__(self) -> str:
-        return f"Order is being processed by {self.employee} it consits of {}."
+        return f"Order is being processed by {self.employee}. Order consists of {self.books}."
 
 
 class Employee():
@@ -77,8 +79,50 @@ book2 = Book(library1, 1999, "Norman", "Nolan", 2211)
 book3 = Book(library2, 2005, "Norbert", "Gierczak", 666)
 book4 = Book(library2, 2015, "Anna", "Kot", 231)
 book5 = Book(library1, 2019, "ZYX", "XYZ", 455)
-employee1 = Employee("Piotr", "XYZ", "2016-11-25", "1998-3-6", "Katowice", "Kilinskiego", "41-200", 602345123 )
-employee2 = Employee("Rafal", "XYZ", "2016-1-12", "1993-6-1", "Katowice", "Kiepury", "41-200", 602345123 )
-employee3 = Employee("Alicja", "XYZ", "2012-3-1", "1997-6-12", "Katowice", "1_maja", "41-200", 602345122 )
-order1 = Order(employee1,student1, [book5, book2], datetime.now())
+employee1 = Employee("Piotr", "XYZ", "2016-11-25", "1998-3-6", "Katowice", "Kilinskiego", "41-200", 602345123)
+employee2 = Employee("Rafal", "XYZ", "2016-1-12", "1993-6-1", "Katowice", "Kiepury", "41-200", 602345123)
+employee3 = Employee("Alicja", "XYZ", "2012-3-1", "1997-6-12", "Katowice", "1_maja", "41-200", 602345122)
+order1 = Order(employee1, student1, [book5, book2], datetime.now())
+order2 = Order(employee3, student2, book1, datetime.now())
 print(order1)
+print(order2)
+
+
+# zad3
+
+class Property():
+
+    def __init__(self, area, rooms, price, address):
+        self.area = area
+        self.rooms = rooms
+        self.price = price
+        self.address = address
+
+    def __str__(self):
+        return f"Property area is {self.area}, it costs {self.price}$."
+
+
+class House(Property):
+
+    def __init__(self, area, rooms, price, address, plot):
+        super().__init__(area, rooms, price, address)
+        self.plot = plot
+
+    def __str__(self):
+        return f"House's plot is {self.plot} m2. It's priced at {self.price}$."
+
+
+class Flat(Property):
+
+    def __init__(self,area, rooms, price, address, floor):
+        super().__init__(area, rooms, price, address)
+        self.floor = floor
+
+    def __str__(self):
+        return f"Flat is located on {self.floor} floor, it has {self.rooms} room(s)."
+
+
+house = House(120,7,120000,"XYZ", 500)
+flat = Flat(80, 3, 423321,"ZYX", 7)
+print(house)
+print(flat)
