@@ -23,8 +23,7 @@ def multiply(number1: int, number2: int):
 def isEven(number: int):
     if number % 2 == 0:
         return True
-    else:
-        return False
+    return False
 
 
 czyParzysta = isEven(7)
@@ -38,16 +37,14 @@ else:
 def zad4(number1: int, number2: int, number3: int):
     if number1 + number2 == number3:
         return True
-    else:
-        return False
+    return False
 
 
 # zad5
 def inList(array: list, number: int):
     if number in array:
         return True
-    else:
-        return False
+    return False
 
 
 # zad 6
