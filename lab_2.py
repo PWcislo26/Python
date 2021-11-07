@@ -6,7 +6,6 @@ def a(names: list):
         print(name)
 
 
-
 # Utwórz funkcję, która otrzyma w parametrze listę zawierającą 5 dowolnych
 # liczb, każdy jej element pomnoży przez 2, a na końcu ją zwróci. Zadanie
 # należy wykonać w 2 wersjach:
@@ -40,8 +39,11 @@ even_numbers()
 
 def second_numbers():
     numbers = [i for i in range(10)]
-    for i in range(0, len(numbers), 2):
-        print(numbers[i])
+    for i in range(len(numbers)):
+        if i % 2 == 0:
+            continue
+        else:
+            print(numbers[i])
 
 
 second_numbers()
