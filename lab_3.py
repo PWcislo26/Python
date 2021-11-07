@@ -8,15 +8,15 @@ args = parser.parse_args()
 
 # zad 1
 def nameSurname(name: str, surname: str):
-    return ("Czesc {} {}".format(name, surname))
+    return "Czesc {} {}".format(name, surname)
 
 
-# print(nameSurname("Piotr", "Wcislo"))
+print(nameSurname("Piotr", "Wcislo"))
 
 
 # zad2
 def multiply(number1: int, number2: int):
-    return (number1 * number2)
+    return number1 * number2
 
 
 # zad3
@@ -27,11 +27,11 @@ def isEven(number: int):
         return False
 
 
-# czyParzysta = isEven(7)
-# if czyParzysta:
-#     print("Liczba parzysta")
-# else:
-#     print("Liczba nieparzysta")
+czyParzysta = isEven(7)
+if czyParzysta:
+    print("Liczba parzysta")
+else:
+    print("Liczba nieparzysta")
 
 
 # zad4
@@ -57,7 +57,7 @@ def zad6(array1: list, array2: list):
     return array
 
 
-# print(zad6([1, 2, 3, 4], [1, 2, 3, 4, 5, 6, 7]))
+print(zad6([1, 2, 3, 4], [1, 2, 3, 4, 5, 6, 7]))
 
 
 # zad 7 + zad 8
@@ -91,7 +91,7 @@ class Brawery():
 
 
 def getInfo():
-    if args.city != None:
+    if args.city is not None:
         url = 'https://api.openbrewerydb.org/breweries?by_city={}'.format(args.city)
     else:
         url = 'https://api.openbrewerydb.org/breweries?per_page=20'
