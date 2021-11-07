@@ -24,52 +24,52 @@ print(student2.is_passed())
 # zad2
 class Library():
     def __init__(self, city, street, zip_code, open_hours, phone):
-        self.city = city
-        self.street = street
-        self.zip_code = zip_code
-        self.open_hours = open_hours
-        self.phone = phone
+        self.__city = city
+        self.__street = street
+        self.__zip_code = zip_code
+        self.__open_hours = open_hours
+        self.__phone = phone
 
     def __str__(self) -> str:
-        return f"Library in {self.city} on {self.street}"
+        return f"Library in {self.__city} on {self.__street}"
 
 
 class Order():
     def __init__(self, employee, student, books, order_date) -> None:
-        self.employee = employee
-        self.student = student
-        self.books = books
-        self.order_date = order_date
+        self.__employee = employee
+        self.__student = student
+        self.__books = books
+        self.__order_date = order_date
 
     def __str__(self) -> str:
-        return f"Order is being processed by {self.employee}. Order consists of {self.books}."
+        return f"Order is being processed by {self.__employee}. Order consists of {self.__books}."
 
 
 class Employee():
     def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone) -> None:
-        self.first_name = first_name
-        self.last_name = last_name
-        self.hire_date = hire_date
-        self.birth_date = birth_date
-        self.city = city
-        self.street = street
-        self.zip_code = zip_code
-        self.phone = phone
+        self.__first_name = first_name
+        self.__last_name = last_name
+        self.__hire_date = hire_date
+        self.__birth_date = birth_date
+        self.__city = city
+        self.__street = street
+        self.__zip_code = zip_code
+        self.__phone = phone
 
     def __str__(self) -> str:
-        return f"Employee {self.first_name} {self.last_name} living in {self.city}"
+        return f"Employee {self.__first_name} {self.__last_name} living in {self.__city}"
 
 
 class Book():
     def __init__(self, library, publication_date, author_name, author_surname, number_of_pages) -> None:
-        self.library = library
-        self.publication_date = publication_date
-        self.author_name = author_name
-        self.author_surname = author_surname
-        self.number_of_pages = number_of_pages
+        self.__library = library
+        self.__publication_date = publication_date
+        self.__author_name = author_name
+        self.__author_surname = author_surname
+        self.__number_of_pages = number_of_pages
 
     def __str__(self) -> str:
-        return f"Book written by {self.author_name} {self.author_surname}, currently in {self.library}"
+        return f"Book written by {self.__author_name} {self.__author_surname}, currently in {self.__library}"
 
 
 library1 = Library("Katowice", "3_maja", "41-200", "8-16", 602354971)
@@ -93,33 +93,33 @@ print(order2)
 class Property():
 
     def __init__(self, area, rooms, price, address):
-        self.area = area
-        self.rooms = rooms
-        self.price = price
-        self.address = address
+        self._area = area
+        self._rooms = rooms
+        self._price = price
+        self._address = address
 
     def __str__(self):
-        return f"Property area is {self.area}, it costs {self.price}$."
+        return f"Property area is {self._area}, it costs {self._price}$."
 
 
 class House(Property):
 
     def __init__(self, area, rooms, price, address, plot):
         super().__init__(area, rooms, price, address)
-        self.plot = plot
+        self.__plot = plot
 
     def __str__(self):
-        return f"House's plot is {self.plot} m2. It's priced at {self.price}$."
+        return f"House's plot is {self.__plot} m2. It's priced at {self._price}$."
 
 
 class Flat(Property):
 
     def __init__(self,area, rooms, price, address, floor):
         super().__init__(area, rooms, price, address)
-        self.floor = floor
+        self.__floor = floor
 
     def __str__(self):
-        return f"Flat is located on {self.floor} floor, it has {self.rooms} room(s)."
+        return f"Flat is located on {self.__floor} floor, it has {self._rooms} room(s)."
 
 
 house = House(120,7,120000,"XYZ", 500)
