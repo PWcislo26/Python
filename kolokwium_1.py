@@ -193,11 +193,11 @@ class Zamowienie:
         return self._klient.adres
 
 
-
 klient = KlientDetaliczny("Piotr", "Wcislo", "123456789", "Katowice, Murckowska 17", "piotrwcislo@gmail.com")
-aparat = Produkt("Canon xyz", 1430.11, "fajny aparat" , 1337, "aparaty")
+aparat = Produkt("Canon xyz", 1430.11, "fajny aparat", 1337, "aparaty")
 telefon = Produkt("Samsung xyz", 2222.234, "super telefom", 154, "smartfony")
 magazyn = Magazyn(1, "Sosnowiec", "3-maja 41", 35, 10000)
 zamowienie = Zamowienie(klient, [aparat, telefon], magazyn, "11/11/2021", 100)
 print(zamowienie)
-
+print(zamowienie.oblicz_wartosc())
+print(zamowienie.adres_klienta())
