@@ -34,7 +34,7 @@ class Produkt:
 class Magazyn:
 
     def __init__(self, identyfikator, miasto, ulica, liczba_pracownikow, wielkosc):
-        self._identyfiaktor = identyfikator
+        self._identyfikator = identyfikator
         self._miasto = miasto
         self._ulica = ulica
         self._liczba_pracownikow = liczba_pracownikow
@@ -45,7 +45,7 @@ class Magazyn:
 
     @property
     def identyfikator(self) -> int:
-        return self._identyfiaktor
+        return self._identyfikator
 
     @property
     def miasto(self) -> str:
