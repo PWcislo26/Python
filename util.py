@@ -35,4 +35,3 @@ def get_links():
     for i in range(1, len(data)):
         links.append(Link(data[i][0], data[i][1], data[i][2]).__dict__)
     return links
-
