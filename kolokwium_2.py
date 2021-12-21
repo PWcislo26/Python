@@ -140,7 +140,7 @@ class Zamowienie:
 
 pacjent_x = Pacjent("Marek", "Wolny", 27, "Cukrzyca")
 dieta1 = Dieta("Sokowa", 500, True, 15.2347)
-dieta2 = Dieta("Paleo", 1500, False, 35.111)
+dieta2 = Dieta("Paleo", 1500, False, 35.11142)
 dietetyk_y = Dietetyk("Aleksandra", "Nowak", "doktor", "Szpital nr 1 w Katowicach")
 
 zamowienie = Zamowienie()
