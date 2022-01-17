@@ -1,4 +1,10 @@
 from detector import *
 
-for image in get_images():
-    detection(image)
+
+def main():
+    for image in get_images():
+        detection(image)
+
+
+if __name__ == "__main__":
+    main()

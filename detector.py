@@ -1,5 +1,6 @@
-import cv2
 from glob import glob
+
+import cv2
 import imutils
 
 
@@ -10,14 +11,14 @@ def get_images() -> list:
 
 
 def detection(image):
+    """main person detection function"""
     hog = cv2.HOGDescriptor()
     hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
     image = cv2.imread(image)
 
     image = imutils.resize(image, width=640, height=480)  # resizing image
     # using hog trained network to help detect people in images
-    (persons_detected, _) = hog.detectMultiScale(image, winStride=(4, 6), padding=(8, 8))
-    print(len(persons_detected))
+    (persons_detected, _) = hog.detectMultiScale(image, winStride=(4, 4), padding=(8, 8), scale=1.07)
     for x, y, w, h in persons_detected:
         cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
@@ -37,4 +38,4 @@ def detection(image):
     cv2.destroyAllWindows()
 
 
-print(get_images())
+
