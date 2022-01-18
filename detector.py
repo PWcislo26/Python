@@ -18,7 +18,7 @@ def detection(image):
 
     image = imutils.resize(image, width=640, height=480)  # resizing image
     # using hog trained network to help detect people in images
-    (persons_detected, _) = hog.detectMultiScale(image, winStride=(5, 5), padding=(8, 8), scale=1.06)
+    (persons_detected, _) = hog.detectMultiScale(image, winStride=(4, 4), padding=(8, 8), scale=1.06, finalThreshold=2)
     for x, y, w, h in persons_detected:
         cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
